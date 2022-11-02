@@ -83,19 +83,19 @@ def query_balance():
             {"name": "签到信息", "value": bonus}
         ]
 
-        # # 余额
-        # balance = tree.xpath('//div[@class="balance_area bigger"]/text()')
-        # if len(balance) == 2:
-        #     balance = ['0'] + balance
+        # 余额
+        balance = tree.xpath('//div[@class="balance_area bigger"]/text()')
+        if len(balance) == 2:
+            balance = ['0'] + balance
 
-        # golden, silver, bronze = [s.strip() for s in balance]
-        # msg += [
-        #     {"name": "账户余额", "value": f"{golden} 金币，{silver} 银币，{bronze} 铜币"}
-        # ]
+        golden, silver, bronze = [s.strip() for s in balance]
+        msg += [
+            {"name": "账户余额", "value": f"{golden} 金币，{silver} 银币，{bronze} 铜币"}
+        ]
     else:
         msg += [
             {"name": "签到信息", "value": "签到失败"},
-            # {"name": "账户余额", "value": "获取失败"}
+            {"name": "账户余额", "value": "获取失败"}
         ]
 
 

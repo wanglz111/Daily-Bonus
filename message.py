@@ -4,6 +4,7 @@
 # @Author   : Jckling
 
 import os
+import requests
 
 from V2EX import v2ex_checkin
 
@@ -19,6 +20,6 @@ if __name__ == '__main__':
 
     # use bark
     if BARK_TOKEN:
-        os.system(f"curl -X POST https://api.day.app/{BARK_TOKEN}/\{content}")
+        requests.get(f"https://api.day.app/{BARK_TOKEN}/{content}")
     else:
         print(content)
