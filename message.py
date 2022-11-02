@@ -17,7 +17,7 @@ from telegram import Bot
 # info
 TG_USER_ID = os.environ.get("TG_USER_ID")
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN")
-BARK_KEY = "HaNJZPZJyMpSoNp2QLnrM8"
+BARK_TOKEN = os.environ.get("BARK_TOKEN")
 
 if __name__ == '__main__':
     start_time = time.time()
@@ -47,7 +47,7 @@ if __name__ == '__main__':
             parse_mode="HTML"
         )
     # use bark
-    elif BARK_KEY:
-        os.system(f"curl -X POST -d '{content}' https://api.day.app/{os.environ.get('BARK_KEY')}/body")
+    elif BARK_TOKEN:
+        os.system(f"curl -X POST -d '{content}' https://api.day.app/{os.environ.get('BARK_TOKEN)'}/")
     else:
         print(content)
