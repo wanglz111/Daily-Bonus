@@ -48,6 +48,6 @@ if __name__ == '__main__':
         )
     # use bark
     elif BARK_TOKEN:
-        os.system(f"curl -X POST -d '{content}' https://api.day.app/{os.environ.get('BARK_TOKEN)'}/")
+        os.system(f"curl -X POST https://api.day.app/{BARK_TOKEN}/\{content}")
     else:
         print(content)
