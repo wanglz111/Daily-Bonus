@@ -48,6 +48,8 @@ if __name__ == '__main__':
         )
     # use bark
     elif BARK_TOKEN:
+        # 内容将换行符改成%20
+        content = content.replace("\n", "%20")
         os.system(f"curl -X POST https://api.day.app/{BARK_TOKEN}/\{content}")
     else:
         print(content)
